@@ -67,6 +67,6 @@ user3 = User.create_user(User.random_name, User.random_email)
 puts User.all
 
 # Finds a User object by email and prints the related user's name.
-if user = User.find_by_email('fake3@domain.com')
+if user == User.find_by_email('fake3@domain.com')
   puts "Email found! The related user is: #{user.name}"
 end
