@@ -38,6 +38,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  bundler (~> 2.4)
   faker (~> 3.2)
   pry (~> 0.14.2)
   rubocop (~> 1.50)
