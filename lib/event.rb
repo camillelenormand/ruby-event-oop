@@ -27,11 +27,11 @@ class Event
   end
 
   def is_past?
-    @start_date < Time.now ? true : false
+    @start_date < Time.now 
   end
 
   def is_future?
-    @start_date > Time.now ? true : false
+    @start_date > Time.now
   end
 
   def is_soon?
