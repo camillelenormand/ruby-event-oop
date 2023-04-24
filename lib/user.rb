@@ -20,10 +20,13 @@ class User
     %w[Marc Robert Jan].sample
   end
 
+  def self.random_email
+    %w[fake@domain.com fake2@domain.com fake3@domain.com].sample
+  end
+
   # Creates a new User object with a random age and email, and the given name.
-  def self.create_user(name)
+  def self.create_user(name, email)
     age = rand(15..35)
-    email = 'email@fake.com'
     User.new(email, age, name)
   end
 
@@ -37,16 +40,32 @@ class User
     @@all_users
   end
 
+  def self.find_by_email(email)
+    @@all_users.find{ 
+      |user| user.email == email 
+    }
+  end
+
   # Returns a string representation of the User object.
   def to_s
-    "#{name}, #{age}, #{email}"
+  "
+  ----------------------------
+    Name:#{name}
+    Age #{age}
+    Email:#{email}
+  "
   end
 end
 
 # Creates three User objects with random names and adds them to the @@all_users array.
-user1 = User.create_user(User.random_name)
-user2 = User.create_user(User.random_name)
-user3 = User.create_user(User.random_name)
+user1 = User.create_user(User.random_name, User.random_email)
+user2 = User.create_user(User.random_name, User.random_email)
+user3 = User.create_user(User.random_name, User.random_email)
 
 # Prints the array of all User objects created.
 puts User.all
+
+# Finds a User object by email and prints the related user's name.
+if user = User.find_by_email("fake3@domain.com")
+  puts "Email found! The related user is: #{user.name}"
+end
