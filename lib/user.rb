@@ -2,6 +2,7 @@
 class User
   # Getter and setter methods for email, age, and name attributes.
   attr_accessor :email, :age, :name
+
   # Class variable to keep track of all User objects created.
   @@all_users = []
 
@@ -41,14 +42,14 @@ class User
   end
 
   def self.find_by_email(email)
-    @@all_users.find{ 
-      |user| user.email == email 
-    }
+    @@all_users.find do |user|
+      user.email == email
+    end
   end
 
   # Returns a string representation of the User object.
   def to_s
-  "
+    "
   ----------------------------
     Name:#{name}
     Age #{age}
@@ -66,6 +67,6 @@ user3 = User.create_user(User.random_name, User.random_email)
 puts User.all
 
 # Finds a User object by email and prints the related user's name.
-if user = User.find_by_email("fake3@domain.com")
+if user = User.find_by_email('fake3@domain.com')
   puts "Email found! The related user is: #{user.name}"
 end
