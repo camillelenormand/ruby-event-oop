@@ -11,3 +11,5 @@ gem "faker", "~> 3.2"
 gem "rubocop", "~> 1.50"
 
 gem "bundler", "~> 2.4"
+
+gem "time", "~> 0.2.2"

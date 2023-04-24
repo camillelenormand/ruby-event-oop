@@ -12,4 +12,9 @@ require_relative 'lib/user.rb'
 
 binding.pry
 
+## Testing User Class
 User.all
+
+## Testing Event Class
+event = Event.create_event("2019-01-13 09:00", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+puts event.to_s
