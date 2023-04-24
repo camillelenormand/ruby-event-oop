@@ -44,7 +44,7 @@ class Event
 end
 
 event = Event.create_event(date: "2019-01-13 09:00", duration: 10, title: "standup quotidien", attendees: ["truc@machin.com", "bidule@chose.fr"])
-#event.postpone_event
+event.postpone_event
 event.get_end_date
 puts "Event is due." if event.is_past?
 puts "Event starting later." if event.is_future?
